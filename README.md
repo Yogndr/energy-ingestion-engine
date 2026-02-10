@@ -1,60 +1,57 @@
-High-Scale Energy Ingestion Engine
+# High-Scale Energy Ingestion Engine
 
 This project is a backend service built using NestJS to ingest energy consumption data from multiple sources and store it reliably in a PostgreSQL database.
 
+
 The system supports both single and batch ingestion of energy data and is designed with validation, scalability, and clean architecture in mind.
 
-Tech Stack
+---
 
-Backend Framework: NestJS (Node.js)
+## Tech Stack
 
-Database: PostgreSQL
+- Backend Framework: NestJS (Node.js)
+- Database: PostgreSQL
+- ORM: TypeORM
+- Validation: class-validator, class-transformer
+- Containerization: Docker, Docker Compose
 
-ORM: TypeORM
+---
 
-Validation: class-validator, class-transformer
-
-Containerization: Docker, Docker Compose
-
-Architecture Overview
+## Architecture Overview
 
 The application follows a modular and layered architecture:
 
-Client
-→ Controller (API Layer)
-→ Service (Business Logic)
-→ Entity (Database Model)
-→ PostgreSQL
+Client  
+→ Controller (API Layer)  
+→ Service (Business Logic)  
+→ Entity (Database Model)  
+→ PostgreSQL  
 
-Controllers handle HTTP requests and responses
+- Controllers handle HTTP requests and responses  
+- Services contain business logic  
+- Entities define database tables  
+- DTOs ensure request validation  
 
-Services contain business logic
+---
 
-Entities define database tables
+## Features
 
-DTOs ensure request validation
+- Single energy data ingestion  
+- Batch ingestion for high-scale data input  
+- Input validation using DTOs  
+- PostgreSQL persistence using TypeORM  
+- Dockerized database setup  
+- Clean and modular NestJS structure  
 
-Features
+---
 
-Single energy data ingestion
+## API Endpoints
 
-Batch ingestion for high-scale data input
-
-Input validation using DTOs
-
-PostgreSQL persistence using TypeORM
-
-Dockerized database setup
-
-Clean and modular NestJS structure
-
-API Endpoints
-Ingest Single Energy Record
-
-POST /energy/ingest
+### Ingest Single Energy Record
+**POST** `/energy/ingest`
 
 Request Body:
-
+```json
 {
   "meterId": "MTR-101",
   "consumption": 23.5,
@@ -76,7 +73,7 @@ Fetch All Records
 
 GET /energy
 
-How to Run the Project
+ How to Run the Project
 Prerequisites
 
 Node.js (v18+ recommended)
@@ -118,9 +115,7 @@ This prevents incorrect or incomplete data from being stored
 
 Scaling Considerations
 
-To handle higher data volumes, the system can be extended with:
-
-Message queues (Kafka / RabbitMQ) for asynchronous ingestion
+Message queues (Kafka / RabbitMQ) for async ingestion
 
 Database indexing on frequently queried fields
 
