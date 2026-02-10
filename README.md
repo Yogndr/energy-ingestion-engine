@@ -60,9 +60,12 @@ Request Body:
 
 Batch Energy Ingestion
 
+Endpoint
+
 POST /energy/batch
 
-Request Body:
+
+Request Body
 
 [
   { "meterId": "MTR-1", "consumption": 10, "unit": "kWh" },
@@ -71,9 +74,12 @@ Request Body:
 
 Fetch All Records
 
+Endpoint
+
 GET /energy
 
- ### How to Run the Project
+
+How to Run the Project
 Prerequisites
 
 Node.js (v18+ recommended)
@@ -81,8 +87,8 @@ Node.js (v18+ recommended)
 Docker & Docker Compose
 
 Steps
-
 Clone the repository
+
 
 git clone <repo-url>
 cd energy-ingestion-engine
