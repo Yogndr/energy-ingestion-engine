@@ -1,56 +1,60 @@
-# High-Scale Energy Ingestion Engine
+High-Scale Energy Ingestion Engine
 
 This project is a backend service built using NestJS to ingest energy consumption data from multiple sources and store it reliably in a PostgreSQL database.
 
 The system supports both single and batch ingestion of energy data and is designed with validation, scalability, and clean architecture in mind.
 
----
+Tech Stack
 
-## Tech Stack
+Backend Framework: NestJS (Node.js)
 
-- Backend Framework: NestJS (Node.js)
-- Database: PostgreSQL
-- ORM: TypeORM
-- Validation: class-validator, class-transformer
-- Containerization: Docker, Docker Compose
+Database: PostgreSQL
 
----
+ORM: TypeORM
 
-## Architecture Overview
+Validation: class-validator, class-transformer
+
+Containerization: Docker, Docker Compose
+
+Architecture Overview
 
 The application follows a modular and layered architecture:
 
-Client  
-→ Controller (API Layer)  
-→ Service (Business Logic)  
-→ Entity (Database Model)  
-→ PostgreSQL  
+Client
+→ Controller (API Layer)
+→ Service (Business Logic)
+→ Entity (Database Model)
+→ PostgreSQL
 
-- Controllers handle HTTP requests and responses  
-- Services contain business logic  
-- Entities define database tables  
-- DTOs ensure request validation  
+Controllers handle HTTP requests and responses
 
----
+Services contain business logic
 
-## Features
+Entities define database tables
 
-- Single energy data ingestion
-- Batch ingestion for high-scale data input
-- Input validation using DTOs
-- PostgreSQL persistence using TypeORM
-- Dockerized database setup
-- Clean and modular NestJS structure
+DTOs ensure request validation
 
----
+Features
 
-## API Endpoints
+Single energy data ingestion
 
-### Ingest Single Energy Record
-**POST** `/energy/ingest`
+Batch ingestion for high-scale data input
+
+Input validation using DTOs
+
+PostgreSQL persistence using TypeORM
+
+Dockerized database setup
+
+Clean and modular NestJS structure
+
+API Endpoints
+Ingest Single Energy Record
+
+POST /energy/ingest
 
 Request Body:
-```json
+
 {
   "meterId": "MTR-101",
   "consumption": 23.5,
@@ -81,23 +85,23 @@ Docker & Docker Compose
 
 Steps
 
-1)Clone the repository
+Clone the repository
 
 git clone <repo-url>
 cd energy-ingestion-engine
 
 
-2)Start PostgreSQL using Docker Compose
+Start PostgreSQL using Docker Compose
 
 docker compose up -d
 
 
-3)Install dependencies
+Install dependencies
 
 npm install
 
 
-4)Start the application
+Start the application
 
 npm run start:dev
 
@@ -106,23 +110,23 @@ The server will run on http://localhost:3000
 
 Validation and Error Handling
 
-1)DTO-based validation ensures only valid data is ingested
+DTO-based validation ensures only valid data is ingested
 
-2)Invalid or missing fields result in a 400 Bad Request
+Invalid or missing fields result in a 400 Bad Request
 
-3)This prevents incorrect or incomplete data from being stored in the database
+This prevents incorrect or incomplete data from being stored
 
 Scaling Considerations
 
 To handle higher data volumes, the system can be extended with:
 
-1)Message queues (Kafka / RabbitMQ) for asynchronous ingestion
+Message queues (Kafka / RabbitMQ) for asynchronous ingestion
 
-2)Database indexing on frequently queried fields
+Database indexing on frequently queried fields
 
-3)Horizontal scaling using multiple NestJS instances
+Horizontal scaling using multiple NestJS instances
 
-4)Caching layer (Redis) for read-heavy workloads
+Caching layer (Redis) for read-heavy workloads
 
 Author
 
