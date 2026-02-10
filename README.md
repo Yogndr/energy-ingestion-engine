@@ -51,7 +51,7 @@ Client
 **POST** `/energy/ingest`
 
 Request Body:
-```json
+json
 {
   "meterId": "MTR-101",
   "consumption": 23.5,
@@ -82,30 +82,25 @@ GET /energy
 How to Run the Project
 Prerequisites
 
-Node.js (v18+ recommended)
+1)Node.js (v18+ recommended)
 
-Docker & Docker Compose
+2)Docker & Docker Compose
 
 Steps
-Clone the repository
-
-
+1)Clone the repository
 git clone <repo-url>
 cd energy-ingestion-engine
 
 
-Start PostgreSQL using Docker Compose
-
+2)Start PostgreSQL using Docker Compose
 docker compose up -d
 
 
-Install dependencies
-
+3)Install dependencies
 npm install
 
 
-Start the application
-
+4)Start the application
 npm run start:dev
 
 
