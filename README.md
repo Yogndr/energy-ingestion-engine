@@ -107,21 +107,21 @@ The server will run on http://localhost:3000
 
 Validation and Error Handling
 
-DTO-based validation ensures only valid data is ingested
+1)DTO-based validation ensures only valid data is ingested
 
-Invalid or missing fields result in a 400 Bad Request
+2)Invalid or missing fields result in a 400 Bad Request
 
-This prevents incorrect or incomplete data from being stored
+3)This prevents incorrect or incomplete data from being stored
 
 Scaling Considerations
 
-Message queues (Kafka / RabbitMQ) for async ingestion
+1)Message queues (Kafka / RabbitMQ) for async ingestion
 
-Database indexing on frequently queried fields
+2)Database indexing on frequently queried fields
 
-Horizontal scaling using multiple NestJS instances
+3)Horizontal scaling using multiple NestJS instances
 
-Caching layer (Redis) for read-heavy workloads
+4)Caching layer (Redis) for read-heavy workloads
 
 Author
 
